@@ -1,0 +1,12 @@
+<div
+  class="card"
+  style="width: 18rem; margin-bottom: 30px"
+  (click)="goToUserPostDetails()"
+  >
+  <div class="card-body">
+    <h5 class="card-title">{{ userPost.title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ userPost.userName }}</h6>
+    <p class="card-text">{{ userPost.description | truncatePipe:30 }}</p>
+  </div>
+</div>
+

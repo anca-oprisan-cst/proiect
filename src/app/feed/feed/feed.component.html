@@ -1,0 +1,12 @@
+<div class="feed">
+  <div *ngFor="let userPost of userPosts">
+    <app-user-post [userPost]="userPost">
+    </app-user-post>
+  </div>
+
+  <div *ngIf="loading">
+    <img src="assets/loader.gif">
+  </div>
+
+</div>
+<button type="button" class="btn btn-light" (click)="showMore()" *ngIf="!loading">Show more</button>

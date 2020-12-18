@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg">
+  <div *ngIf="token">
+    <a class="navbar-brand" [routerLink]="'feed'"><img src="/assets/blaze3.gif" alt="A" style="height: 50px; width: 40px;" ></a>
+      </div>
+  <div *ngIf="!token">
+    <a class="navbar-brand" [routerLink]="'register'"><img src="/assets/blaze3.gif" alt="A" style="height: 50px; width: 40px;"></a>
+  </div>
+    <ul class="navbar-nav">
+      <li class="nav-item active" *ngIf="!token">
+        <a class="nav-link" [routerLink]="'register'">Register <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" *ngIf="!token">
+        <a class="nav-link" [routerLink]="'login'">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="token">
+        <a class="nav-link" [routerLink]="'feed'">Feed</a>
+      </li>
+      <li class="nav-item" *ngIf="token">
+        <a class="nav-link" [routerLink]="'followers'">Followers</a>
+      </li>
+      <li class="nav-item" *ngIf="firstName">
+        <p class="nav-link">Hello, <a class="profile-link" [routerLink]="'profile'">{{firstName}}</a></p>
+      </li>
+    </ul>
+  </nav>
+  
