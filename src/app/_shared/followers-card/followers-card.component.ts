@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Follower } from '../followers-list/followers-list.component';
+import { Follower } from '../../followers-list/followers-list.component';
 
 @Component({
   selector: 'app-followers-card',

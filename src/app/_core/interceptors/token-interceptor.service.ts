@@ -14,7 +14,14 @@ export class TokenInterceptorService implements HttpInterceptor {
     if (token) {
       request = request.clone({
         setHeaders: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
+          ContentType: 'application/json',
+        }
+      });
+    } else {
+      request = request.clone({
+        setHeaders: {
+          ContentType: 'application/json',
         }
       });
     }

@@ -1,9 +1,16 @@
+<div class="followers-list">
+  <div *ngIf="followersList.length; else noFollowers">
+    <div *ngFor="let follower of followersList">
+      <app-followers-card [follower]="follower">
+      </app-followers-card>
+    </div>
+  </div>
+</div>
+<ng-template #noFollowers>
+  <div></div>
+</ng-template>
 
-        <div class="followers-list" >
-<div *ngFor="let follower of followersList">
-    <app-followers-card [follower]="follower">
-    </app-followers-card>
-</div>
-</div>
 <button type="button" class="btn btn-dark" (click)="loadMore()">Load more</button>
+
+
 

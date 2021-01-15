@@ -4,16 +4,14 @@ import {RouterModule} from '@angular/router';
 import {AppComponent} from './app.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HeaderComponent} from './header/header.component';
-import {RegisterComponent} from './user/register/register.component';
 import {AppRoutingModule} from './app-routing.module';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {FeedComponent} from './feed/feed/feed.component';
-import {UserPostComponent} from './feed/user-post/user-post.component';
 import {UserPostDetailsComponent} from './user-post-details/user-post-details.component';
-import {TruncatePipePipe} from './_shared/pipes/truncate-pipe.pipe';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import {FollowersListComponent} from './followers-list/followers-list.component';
-import {FollowersCardComponent} from './followers-card/followers-card.component';
+import {MyProfileComponent} from './my-profile/my-profile.component';
+import {FileUploadModule} from 'ng2-file-upload';
+import {SharedModule} from "./_shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -22,13 +20,15 @@ import {FollowersCardComponent} from './followers-card/followers-card.component'
     PageNotFoundComponent,
     UserPostDetailsComponent,
     FollowersListComponent,
-    FollowersCardComponent,
+    MyProfileComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
     RouterModule,
+    FileUploadModule,
+    SharedModule,
     HttpClientModule
   ],
   providers: [],

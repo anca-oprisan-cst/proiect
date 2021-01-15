@@ -9,6 +9,7 @@ import {LoginComponent} from './user/login/login.component';
 import {FollowersListComponent} from './followers-list/followers-list.component';
 import {ProfileComponent} from './user/profile/profile.component';
 import {UserModule} from "./user/user.module";
+import {MyProfileComponent} from "./my-profile/my-profile.component";
 
 const routes: Routes = [
   // { path: '', redirectTo: 'register', pathMatch: 'full' },
@@ -27,8 +28,12 @@ const routes: Routes = [
     component: UserPostDetailsComponent,
   },
   {
+    path: 'my-profile',
+    component: MyProfileComponent,
+  },
+  {
     path: 'followers',
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService],
     component: FollowersListComponent,
   },
   {
